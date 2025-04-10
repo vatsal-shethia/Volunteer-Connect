@@ -1,0 +1,319 @@
+:root {
+  --dark-blue: #1a365d;
+  --dark-blue-hover: #0f2749;
+  --medium-blue: #2c5282;
+  --light-blue: #4a6fa5;
+  --accent-blue: #3182ce;
+  --lighter-blue: #ebf4ff;
+  --white: #ffffff;
+  --light-gray: #f8f9fa;
+  --gray: #e2e8f0;
+  --dark-gray: #718096;
+  --gradient-blue: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+  --gradient-blue-light: linear-gradient(135deg, #2c5282 0%, #4a6fa5 100%);
+  --gradient-blue-accent: linear-gradient(135deg, #2c5282 0%, #3182ce 100%);
+  --border-radius: 6px;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+/* Base styles */
+body {
+  font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  color: #333;
+  background-color: var(--white);
+  line-height: 1.5;
+}
+
+*{
+  padding: 4px;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  color: var(--dark-blue);
+  margin-bottom: 1rem;
+}
+
+a {
+  color: var(--medium-blue);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+a:hover {
+  color: var(--dark-blue);
+}
+
+/* Custom navbar */
+.navbar {
+  background: var(--gradient-blue);
+  box-shadow: var(--shadow);
+}
+
+.navbar-brand {
+  font-weight: 600;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: var(--white);
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius);
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.navbar-dark .navbar-nav .active > .nav-link {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Cards */
+.card {
+  border: none;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+  background-color: var(--lighter-blue);
+  border-bottom: 1px solid var(--gray);
+  padding: 1rem 1.25rem;
+}
+
+.card-gradient {
+  background: var(--gradient-blue-light);
+  color: var(--white);
+}
+
+.card-gradient .card-title {
+  color: var(--white);
+}
+
+/* Buttons */
+.btn-primary {
+  background: var(--gradient-blue);
+  border: none;
+  box-shadow: 0 2px 4px rgba(26, 54, 93, 0.3);
+}
+
+.btn-primary:hover {
+  background: var(--dark-blue);
+  box-shadow: 0 4px 8px rgba(26, 54, 93, 0.4);
+}
+
+.btn-outline-primary {
+  color: var(--dark-blue);
+  border: 2px solid var(--dark-blue);
+  background: transparent;
+}
+
+.btn-outline-primary:hover {
+  background: var(--gradient-blue);
+  border-color: transparent;
+}
+
+/* Forms */
+.form-control:focus {
+  border-color: var(--medium-blue);
+  box-shadow: 0 0 0 0.2rem rgba(42, 82, 130, 0.25);
+}
+
+/* Custom sections */
+.hero-section {
+  background: var(--gradient-blue);
+  color: var(--white);
+  padding: 4rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at top right, rgba(74, 111, 165, 0.4) 0%, transparent 60%);
+}
+
+.section {
+  padding: 4rem 0;
+}
+
+.section-light {
+  background-color: var(--lighter-blue);
+  background: linear-gradient(to bottom, #ffffff 0%, var(--lighter-blue) 100%);
+}
+
+/* Feature boxes */
+.feature-box {
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  background: var(--white);
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.feature-box::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--gradient-blue-accent);
+}
+
+/* Footer */
+.footer {
+  background: var(--gradient-blue);
+  color: var(--white);
+  padding: 2rem 0;
+}
+
+.footer a {
+  color: var(--light-gray);
+}
+
+.footer a:hover {
+  color: var(--white);
+  text-decoration: none;
+}
+
+/* Gradients */
+.gradient-heading {
+  background: var(--gradient-blue);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+}
+
+.gradient-border {
+  position: relative;
+  border-radius: var(--border-radius);
+  padding: 4px;
+  background: var(--gradient-blue-light);
+}
+
+.gradient-border::after {
+  content: '';
+  position: absolute;
+  top: 2px; 
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  background: white;
+  border-radius: calc(var(--border-radius) - 2px);
+  z-index: 0;
+}
+
+.gradient-border > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Accent elements */
+.accent-bar {
+  height: 4px;
+  width: 50px;
+  background: var(--gradient-blue-accent);
+  margin-bottom: 1rem;
+  border-radius: 2px;
+}
+
+.divider {
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--medium-blue), transparent);
+  margin: 2rem 0;
+}
+
+/* Badge with gradient */
+.badge-gradient {
+  background: var(--gradient-blue-light);
+  color: white;
+  border-radius: 50rem;
+  padding: 0.35em 0.65em;
+  font-weight: 600;
+}
+
+/* Utilities */
+.text-blue {
+  color: var(--dark-blue);
+}
+
+.bg-blue {
+  background-color: var(--dark-blue);
+}
+
+.bg-blue-gradient {
+  background: var(--gradient-blue);
+}
+
+.bg-light-blue {
+  background-color: var(--lighter-blue);
+}
+
+.border-blue {
+  border-color: var(--dark-blue) !important;
+}
+
+/* Card with gradient overlay effect */
+.card-overlay {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-overlay::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--gradient-blue);
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.card-overlay:hover::before {
+  opacity: 0.9;
+}
+
+.card-overlay .card-content {
+  position: relative;
+  z-index: 1;
+  color: var(--white);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: var(--transition);
+}
+
+.card-overlay:hover .card-content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .section {
+    padding: 2rem 0;
+  }
+}
